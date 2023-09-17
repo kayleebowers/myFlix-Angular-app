@@ -1,0 +1,11 @@
+{
+  "name": "myflix-angular-app",
+  "version": "1.0.0",
+  "description": "myFlix movie app built with Angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC"
+}
