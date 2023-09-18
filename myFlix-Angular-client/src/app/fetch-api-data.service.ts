@@ -134,7 +134,35 @@ export class FetchApiDataService {
   }
 
   // Edit user
+  editUser(): Observable <any> {
+    const token = localStorage.getItem("token");
+    return this.http.put(apiUrl + "/users/" + "id", {
+      headers: new HttpHeaders(
+        {
+          Authorization: "Bearer " + token,
+        }
+      )
+    }).pipe(
+      map(this.extractResponseData),
+      catchError(this.handleError)
+    );
+  }
+
   // Delete user 
+  deleteUser(): Observable <any> {
+    const token = localStorage.getItem("token");
+    return this.http.delete(apiUrl + "/users/" + "id", {
+      headers: new HttpHeaders(
+        {
+          Authorization: "Bearer " + token,
+        }
+      )
+    }).pipe(
+      map(this.extractResponseData),
+      catchError(this.handleError)
+    );
+  }
+
   // Delete a movie from the favorite movies
   deleteFavoriteMovies(movieId: string): Observable <any> {
     const token = localStorage.getItem("token");
@@ -149,7 +177,6 @@ export class FetchApiDataService {
       catchError(this.handleError)
     );
   }
-
 
   private extractResponseData(res: any): any {
     const body = res;
