@@ -15,7 +15,7 @@ export class FetchApiDataService {
   constructor(private http: HttpClient) {}
 
   // make api call for user registration
-  public userRegistration(userDetails: any): Observable<any> {
+  public userRegistration(userDetails: any): Observable <any> {
     console.log(userDetails);
     return this.http
       .post(apiUrl + 'users', userDetails)
@@ -23,7 +23,7 @@ export class FetchApiDataService {
   }
 
   // get all movies
-  getAllMovies(): Observable<any> {
+  getAllMovies(): Observable <any> {
     const token = localStorage.getItem("token");
     return this.http.get(apiUrl + "movies", {
       headers: new HttpHeaders(
@@ -35,7 +35,7 @@ export class FetchApiDataService {
         );
     }
 
-  private extractResponseData(res: Response): any {
+  private extractResponseData(res: any): any {
     const body = res;
     return body || { };
   }
