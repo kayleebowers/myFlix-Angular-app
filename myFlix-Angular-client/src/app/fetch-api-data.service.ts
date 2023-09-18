@@ -11,6 +11,7 @@ const apiUrl = 'https://movies-app1-3d6bd65a6f09.herokuapp.com';
 })
 export class FetchApiDataService {
   // provide HttpClient to  entire class, making it available via this.http
+  // shortcut for constructor(http: HttpClient) { this.http = http; }
   constructor(private http: HttpClient) {}
 
   // make api call for user registration
@@ -20,6 +21,25 @@ export class FetchApiDataService {
       .post(apiUrl + 'users', userDetails)
       .pipe(catchError(this.handleError));
   }
+
+  // get all movies
+  getAllMovies(): Observable<any> {
+    const token = localStorage.getItem("token");
+    return this.http.get(apiUrl + "movies", {
+      headers: new HttpHeaders(
+        {
+          Authorization: "Bearer " + token,
+        })}).pipe(
+          map(this.extractResponseData),
+          catchError(this.handleError)
+        );
+    }
+
+  private extractResponseData(res: Response): any {
+    const body = res;
+    return body || { };
+  }
+
   private handleError(error: HttpErrorResponse): any {
     if (error.error instanceof ErrorEvent) {
       console.error('Some error occurred: ', error.error.message);
