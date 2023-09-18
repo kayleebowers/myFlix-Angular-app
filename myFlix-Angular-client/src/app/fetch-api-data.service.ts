@@ -58,7 +58,27 @@ export class FetchApiDataService {
     );
   }
 
-  // 
+  // Get director
+  getDirector(director: string): Observable <any> {
+    const token = localStorage.getItem("token");
+    return this.http.get(apiUrl + "/directors/" + "name", {
+      headers: new HttpHeaders(
+        {
+          Authorization: "Bearer " + token,
+        }
+      )
+    }).pipe(
+      map(this.extractResponseData),
+      catchError(this.handleError)
+    );
+  }
+  // Get genre
+  // Get user
+  // Get favorite movies for a user
+  // Add a movie to favorite Movies
+  // Edit user
+  // Delete user and
+  // Delete a movie from the favorite movies
 
   private extractResponseData(res: any): any {
     const body = res;
