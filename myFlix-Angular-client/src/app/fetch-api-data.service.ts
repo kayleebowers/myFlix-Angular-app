@@ -35,6 +35,23 @@ export class FetchApiDataService {
         );
     }
 
+  // get one movie
+  getOneMovie(title: string): Observable <any> {
+    const token = localStorage.getItem("token");
+    return this.http.get(apiUrl + "title", {
+      headers: new HttpHeaders(
+        {
+          Authorization: "Bearer " + token,
+        }
+      )
+    }).pipe(
+      map(this.extractResponseData),
+      catchError(this.handleError)
+    );
+  }
+
+  // 
+
   private extractResponseData(res: any): any {
     const body = res;
     return body || { };
