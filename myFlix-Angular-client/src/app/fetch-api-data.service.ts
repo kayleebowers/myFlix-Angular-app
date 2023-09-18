@@ -89,9 +89,9 @@ export class FetchApiDataService {
   }
 
   // Get user
-  getUser(director: string): Observable <any> {
+  getUser(user: string): Observable <any> {
     const token = localStorage.getItem("token");
-    return this.http.get(apiUrl + "/directors/" + "name", {
+    return this.http.get(apiUrl + "/users/" + "id", {
       headers: new HttpHeaders(
         {
           Authorization: "Bearer " + token,
@@ -104,6 +104,20 @@ export class FetchApiDataService {
   }
 
   // Get favorite movies for a user
+  getFavoriteMovies(favorites: string): Observable <any> {
+    const token = localStorage.getItem("token");
+    return this.http.get(apiUrl + "/users/" + "id", {
+      headers: new HttpHeaders(
+        {
+          Authorization: "Bearer " + token,
+        }
+      )
+    }).pipe(
+      map(this.extractResponseData),
+      catchError(this.handleError)
+    );
+  }
+
   // Add a movie to favorite Movies
   // Edit user
   // Delete user and
