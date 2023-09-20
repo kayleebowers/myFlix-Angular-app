@@ -18,12 +18,12 @@ export class UserProfileComponent {
     ) {}
 
   ngOnInit(): void {
-    this.getFavorites(this.id);
+    this.getFavorites();
   }
 
   // call API to get/add/remove movie from favorites
-  getFavorites(id: string): void {
-    this.fetchApiData.getFavoriteMovies(id).subscribe((response: any) => {
+  getFavorites(): void {
+    this.fetchApiData.getFavoriteMovies().subscribe((response: any) => {
       this.favorites = response;
       console.log(this.favorites);
       return this.favorites;
