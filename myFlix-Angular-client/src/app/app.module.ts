@@ -18,13 +18,15 @@ import { FormsModule } from '@angular/forms';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserRegistrationFormComponent,
     UserLoginComponent,
-    MovieCardComponent
+    MovieCardComponent,
+    WelcomePageComponent
   ],
   imports: [
     BrowserModule,
