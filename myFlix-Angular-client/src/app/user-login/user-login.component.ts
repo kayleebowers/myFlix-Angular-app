@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./user-login.component.scss']
 })
 export class UserLoginComponent implements OnInit {
-  @Input() userLogin = { Username: "", Password: "", Token: ""};
+  @Input() userLogin = { Username: "", Password: ""};
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserLoginComponent>,
@@ -25,6 +25,8 @@ export class UserLoginComponent implements OnInit {
         duration: 2000
       });
     }, (result) => {
+      localStorage.setItem("user", result.user);
+      localStorage.setItem("token", result.token);
       this.snackBar.open(result, 'OK', {
         duration: 2000
       });
