@@ -21,6 +21,11 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { MatIconModule } from "@angular/material/icon";
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { MovieGenreComponent } from './movie-genre/movie-genre.component';
+import { MovieDirectorComponent } from './movie-director/movie-director.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { MovieFavoritesComponent } from './movie-favorites/movie-favorites.component';
 
 // define main routes
 const appRoutes: Routes = [
@@ -35,7 +40,12 @@ const appRoutes: Routes = [
     UserRegistrationFormComponent,
     UserLoginComponent,
     MovieCardComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    UserProfileComponent,
+    MovieGenreComponent,
+    MovieDirectorComponent,
+    MovieDetailsComponent,
+    MovieFavoritesComponent
   ],
   imports: [
     BrowserModule,
