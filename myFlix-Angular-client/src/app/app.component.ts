@@ -29,4 +29,9 @@ export class AppComponent {
     }  
   }
 
+  logout(): void {
+    localStorage.clear();
+    this.router.navigate(["welcome"]);
+  }
+
 }
