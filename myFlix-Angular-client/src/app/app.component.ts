@@ -21,7 +21,7 @@ export class AppComponent {
   }
 
   // open login dialog on button click
-  loginUser(): void {
+  openLoginDialog(): void {
     this.dialog.open(UserLoginComponent, {
       width: "280px"
     })
