@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RouterModule, Routes } from '@angular/router';
 
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,6 +20,13 @@ import { UserRegistrationFormComponent } from './user-registration-form/user-reg
 import { UserLoginComponent } from './user-login/user-login.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+
+// define main routes
+const appRoutes: Routes = [
+  { path: "welcome", component: WelcomePageComponent },
+  { path: "movies", component: MovieCardComponent },
+  { path: "", redirectTo: "welcome", pathMatch: "prefix" }
+]
 
 @NgModule({
   declarations: [
@@ -39,7 +47,8 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
     MatFormFieldModule,
     MatDialogModule,
     MatSnackBarModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
