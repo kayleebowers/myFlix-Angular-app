@@ -25,12 +25,12 @@ export class UserLoginComponent implements OnInit {
       localStorage.setItem("user", JSON.stringify(result.user));
       localStorage.setItem("token", result.token);
       this.dialogRef.close();
-      this.snackBar.open(result, "OK", {
+      this.snackBar.open("You are logged in!", "OK", {
         duration: 2000
       });
     }, (result) => {
       console.log(result);
-      this.snackBar.open(result, 'OK', {
+      this.snackBar.open("Something went wrong with your login. Try again.", 'OK', {
         duration: 2000
       });
     });
