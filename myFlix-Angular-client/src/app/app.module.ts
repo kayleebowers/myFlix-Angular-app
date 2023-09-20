@@ -26,6 +26,7 @@ import { MovieGenreComponent } from './movie-genre/movie-genre.component';
 import { MovieDirectorComponent } from './movie-director/movie-director.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { MovieFavoritesComponent } from './movie-favorites/movie-favorites.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 // define main routes
 const appRoutes: Routes = [
@@ -46,7 +47,8 @@ const appRoutes: Routes = [
     MovieGenreComponent,
     MovieDirectorComponent,
     MovieDetailsComponent,
-    MovieFavoritesComponent
+    MovieFavoritesComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
