@@ -41,7 +41,8 @@ export class MovieCardComponent {
       this.dialog.open(MovieDetailsComponent, {
         width: "500px"
       })
-    })
+    });
+    return this.movie;
   }
 
   openGenreDialog(name: string): void {
