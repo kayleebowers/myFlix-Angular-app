@@ -20,7 +20,7 @@
     </mat-card>
     <h1>Your Favorite Movies</h1>
     <div style="display: flex">
-        <mat-card *ngfor="let favorite of favorites; let i = index">
+        <mat-card *ngFor="let favorite of favorites; let i = index">
             <mat-card-header>
                 <mat-card-title>{{ favorite.Title }}</mat-card-title>
                 <mat-card-subtitle
