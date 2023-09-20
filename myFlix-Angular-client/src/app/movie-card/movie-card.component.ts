@@ -4,7 +4,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { MovieDetailsComponent } from "../movie-details/movie-details.component";
 import { MovieGenreComponent } from '../movie-genre/movie-genre.component';
 import { MovieDirectorComponent } from '../movie-director/movie-director.component';
-import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-movie-card',
@@ -80,6 +79,4 @@ export class MovieCardComponent {
     })
     return this.director;
   }
-
-  // call API to add/remove movie from favorites
 }
