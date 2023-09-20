@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MovieDetailsComponent } from "../movie-details/movie-details.component";
 import { MovieGenreComponent } from '../movie-genre/movie-genre.component';
 import { MovieDirectorComponent } from '../movie-director/movie-director.component';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-movie-card',
@@ -34,12 +35,16 @@ export class MovieCardComponent {
   }
 
   // functions to open movie info dialogs 
-  openMovieDetailsDialog(movie: string): void {
-    this.fetchApiData.getOneMovie(movie).subscribe((response: any) => {
+  openMovieDetailsDialog(title: string): void {
+    this.fetchApiData.getOneMovie(title).subscribe((response: any) => {
       this.movie = response;
       console.log(this.movie);
       this.dialog.open(MovieDetailsComponent, {
-        width: "500px"
+        width: "500px",
+        data: {
+          Title: title,
+          Summary: this.movie.Description
+        }
       })
     });
     return this.movie;
@@ -52,20 +57,28 @@ export class MovieCardComponent {
       this.dialog.open(MovieGenreComponent, {
         width: "500px",
         data: {
-          Name: this.genre.Name,
+          Name: name,
           Description: this.genre.description
         }
       });
+      return this.genre;
     })
   }
 
   openDirectorDialog(director: string): void {
     this.fetchApiData.getDirector(director).subscribe((response: any) => {
       this.director = response;
+      console.log(this.director);
       this.dialog.open(MovieDirectorComponent, {
-        width: "500px"
+        width: "500px", 
+        data: {
+          Name: director,
+          Bio: this.director.Bio,
+          BirthYear: this.director.Birth,
+        }
       });
     })
+    return this.director;
   }
 
   // call API to add/remove movie from favorites
