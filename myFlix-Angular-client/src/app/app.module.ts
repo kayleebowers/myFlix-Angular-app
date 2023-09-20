@@ -31,6 +31,7 @@ import { MovieFavoritesComponent } from './movie-favorites/movie-favorites.compo
 const appRoutes: Routes = [
   { path: "welcome", component: WelcomePageComponent },
   { path: "movies", component: MovieCardComponent },
+  { path: "users", component: UserProfileComponent},
   { path: "", redirectTo: "welcome", pathMatch: "prefix" }
 ]
 
