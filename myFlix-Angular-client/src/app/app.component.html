@@ -4,14 +4,13 @@
       <button
         mat-icon-button
         class="example-icon"
-        aria-label="Example icon-button with menu icon"
+        aria-label="home button"
+        (click)="routeToHome()"
       >
         <mat-icon>house</mat-icon>
       </button>
-      <span>myFlix</span>
-      <span>Movies</span>
-      <span>Profile</span>
-      <span class="example-spacer"></span>
+      <span (click)="routeToHome()">myFlix</span>
+      <span (click)="routeToProfile()">Profile</span>
       <button
         mat-icon-button
         class="example-icon"
