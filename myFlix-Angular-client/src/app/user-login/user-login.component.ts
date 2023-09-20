@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-login',
@@ -13,7 +14,8 @@ export class UserLoginComponent implements OnInit {
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserLoginComponent>,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    private router: Router
   ) {}
   
   ngOnInit(): void {
@@ -28,6 +30,7 @@ export class UserLoginComponent implements OnInit {
       this.snackBar.open("You are logged in!", "OK", {
         duration: 2000
       });
+      this.router.navigate(["movies"]);
     }, (result) => {
       console.log(result);
       this.snackBar.open("Something went wrong with your login. Try again.", 'OK', {
