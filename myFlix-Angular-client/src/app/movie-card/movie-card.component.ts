@@ -28,7 +28,6 @@ export class MovieCardComponent {
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((response: any) => {
       this.movies = response;
-      console.log(this.movies);
       return this.movies;
     })
   }
@@ -37,7 +36,6 @@ export class MovieCardComponent {
   openMovieDetailsDialog(title: string): void {
     this.fetchApiData.getOneMovie(title).subscribe((response: any) => {
       this.movie = response;
-      console.log(this.movie);
       this.dialog.open(MovieDetailsComponent, {
         width: "500px",
         data: {
@@ -52,7 +50,6 @@ export class MovieCardComponent {
   openGenreDialog(name: string): void {
     this.fetchApiData.getGenre(name).subscribe((response: any) => {
       this.genre = response;
-      console.log(this.genre);
       this.dialog.open(MovieGenreComponent, {
         width: "500px",
         data: {
@@ -67,7 +64,6 @@ export class MovieCardComponent {
   openDirectorDialog(director: string): void {
     this.fetchApiData.getDirector(director).subscribe((response: any) => {
       this.director = response;
-      console.log(this.director);
       this.dialog.open(MovieDirectorComponent, {
         width: "500px", 
         data: {
