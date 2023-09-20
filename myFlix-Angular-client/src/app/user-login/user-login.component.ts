@@ -13,20 +13,23 @@ export class UserLoginComponent implements OnInit {
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserLoginComponent>,
-    public snackBar: MatSnackBar) {}
+    public snackBar: MatSnackBar
+  ) {}
   
   ngOnInit(): void {
   }
 
   loginUser(): void {
     this.fetchApiData.userLogin(this.userLogin).subscribe((result) => {
+      console.log(result);
+      localStorage.setItem("user", JSON.stringify(result.user));
+      localStorage.setItem("token", result.token);
       this.dialogRef.close();
       this.snackBar.open(result, "OK", {
         duration: 2000
       });
     }, (result) => {
-      localStorage.setItem("user", result.user);
-      localStorage.setItem("token", result.token);
+      console.log(result);
       this.snackBar.open(result, 'OK', {
         duration: 2000
       });
