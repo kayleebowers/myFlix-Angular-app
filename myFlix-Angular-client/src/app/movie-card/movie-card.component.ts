@@ -3,6 +3,7 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MovieDetailsComponent } from "../movie-details/movie-details.component";
 import { MovieGenreComponent } from '../movie-genre/movie-genre.component';
+import { MovieDirectorComponent } from '../movie-director/movie-director.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -42,4 +43,11 @@ export class MovieCardComponent {
     });
   }
 
+  openDirectorDialog(): void {
+    this.dialog.open(MovieDirectorComponent, {
+      width: "500px"
+    });
+  }
+
+  // call API to add/remove movie from favorites
 }
