@@ -2,21 +2,21 @@
 <div>
     <h1>Your profile</h1>
     <mat-card>
-        <mat-header>
-            <mat-title>Your information</mat-title>
-        </mat-header>
-        <mat-content>Username</mat-content>
-        <mat-content>Password</mat-content>
-        <mat-content>Email</mat-content>
-        <mat-content>Birthday</mat-content>
+        <mat-card-header>
+            <mat-card-title>Your information</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>Username</mat-card-content>
+        <mat-card-content>Password</mat-card-content>
+        <mat-card-content>Email</mat-card-content>
+        <mat-card-content>Birthday</mat-card-content>
     </mat-card>
     <mat-card>
-        <mat-header>
-            <mat-title>Update your information</mat-title>
-        </mat-header>
-        <mat-content>Username</mat-content>
-        <mat-content>Email</mat-content>
-        <mat-content>Birthday</mat-content>
+        <mat-card-header>
+            <mat-card-title>Update your information</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>Username</mat-card-content>
+        <mat-card-content>Email</mat-card-content>
+        <mat-card-content>Birthday</mat-card-content>
     </mat-card>
     <h1>Your Favorite Movies</h1>
     <div style="display: flex">
@@ -28,12 +28,12 @@
                 >
               </mat-card-header>
               <img src="{{ favorite.ImagePath }}" alt="{{ favorite.Title }}" />
-              <mat-card-actions>
+              <!-- <mat-card-actions>
                 <button mat-button color="primary" (click)="openGenreDialog(favorite.Genre.Name)">Genre</button>
                 <button mat-button color="primary" (click)="openDirectorDialog(favorite.Director.Name)">Director</button>
                 <button mat-button color="primary" (click)="openMovieDetailsDialog(favorite.Description)">Synopsis</button>
                 <mat-icon>favorite_border</mat-icon>
-              </mat-card-actions>
+              </mat-card-actions> -->
         </mat-card>
     </div>
 </div>
