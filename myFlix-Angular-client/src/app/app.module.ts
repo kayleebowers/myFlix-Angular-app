@@ -26,7 +26,7 @@ import { MovieGenreComponent } from './movie-genre/movie-genre.component';
 import { MovieDirectorComponent } from './movie-director/movie-director.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { MovieFavoritesComponent } from './movie-favorites/movie-favorites.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 // define main routes
 const appRoutes: Routes = [
@@ -48,7 +48,6 @@ const appRoutes: Routes = [
     MovieDirectorComponent,
     MovieDetailsComponent,
     MovieFavoritesComponent,
-    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +62,8 @@ const appRoutes: Routes = [
     MatSnackBarModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    MatIconModule
+    MatIconModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
