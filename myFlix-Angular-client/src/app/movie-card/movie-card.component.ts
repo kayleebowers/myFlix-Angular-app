@@ -58,7 +58,7 @@ export class MovieCardComponent {
         width: "500px",
         data: {
           Name: name,
-          Description: this.genre.description
+          Description: this.genre
         }
       });
       return this.genre;
