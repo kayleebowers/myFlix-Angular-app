@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <mat-card>
-    <mat-card-header>Director</mat-card-header>
-    <mat-card-content>{{data.Name}} </mat-card-content>
-    <mat-card-content>{{data.Bio}} </mat-card-content>
-    <mat-card-content>{{data.BirthYear}} </mat-card-content>
+    <mat-card-header>
+        <mat-card-title>Director: {{data.Name}} </mat-card-title>
+        <mat-card-subtitle>Bio: {{data.Bio}} </mat-card-subtitle>
+        <mat-card-subtitle>Born: {{data.BirthYear}} </mat-card-subtitle>
+    </mat-card-header>
 </mat-card>
