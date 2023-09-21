@@ -15,7 +15,7 @@ export class MovieCardComponent {
   genre: any = "";
   director: any = "";
   movie: any = "";
-  favorite: any[] = [];
+  favorites: any[] = [];
 
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -24,6 +24,7 @@ export class MovieCardComponent {
 
   ngOnInit(): void {
     this.getMovies();
+    this.getFavoriteList();
   }
 
   getMovies(): void {
@@ -78,21 +79,41 @@ export class MovieCardComponent {
     return this.director;
   }
 
+  // get favorite movies for conditional check
+  getFavoriteList(): void {
+    this.fetchApiData.getFavoriteMovies().subscribe((favMovieIDs: any) => {
+      if (favMovieIDs) {
+        this.favorites = favMovieIDs;
+        return this.favorites;
+      } else {
+          return [];
+        }
+    });
+  }
+
+  isFavorite(id: string): boolean {
+    if (this.favorites.includes(id)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   // add favorite movie
   addMoviesToFavorites(movieId: string): void {
     this.fetchApiData.addFavoriteMovies(movieId).subscribe((response: any) => {
-      this.favorite = response;
-      console.log(this.favorite);
-      return this.favorite;
+      this.favorites = response;
+      console.log(this.favorites);
+      return this.favorites;
     })
   }
 
   // delete favorite movie
   removeMoviesFromFavorites(movieId: string): void {
     this.fetchApiData.deleteFavoriteMovies(movieId).subscribe((response: any) => {
-      this.favorite = response;
-      console.log(this.favorite);
-      return this.favorite;
+      this.favorites = response;
+      console.log(this.favorites);
+      return this.favorites;
     })
   }
 }
