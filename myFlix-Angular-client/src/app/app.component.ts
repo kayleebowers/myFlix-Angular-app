@@ -34,4 +34,11 @@ export class AppComponent {
     this.router.navigate(["welcome"]);
   }
 
+  // check for user
+  isUser(): any {
+    if (localStorage.getItem("user")) {
+      return true;
+    } else false
+  };
+
 }

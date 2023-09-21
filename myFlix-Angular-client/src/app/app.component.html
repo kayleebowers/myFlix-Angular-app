@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<p>
-    <mat-toolbar color="primary">
+<div *ngIf="isUser() === true">
+    <mat-toolbar>
       <button
         mat-icon-button
         class="example-icon"
@@ -20,5 +20,5 @@
         <mat-icon>logout</mat-icon>
       </button>
     </mat-toolbar>
-  </p>
+  </div>
 <router-outlet></router-outlet>
