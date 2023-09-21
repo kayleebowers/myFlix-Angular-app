@@ -15,6 +15,7 @@ export class MovieCardComponent {
   genre: any = "";
   director: any = "";
   movie: any = "";
+  favorite: any[] = [];
 
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -28,6 +29,7 @@ export class MovieCardComponent {
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((response: any) => {
       this.movies = response;
+      console.log(this.movies);
       return this.movies;
     })
   }
@@ -74,5 +76,14 @@ export class MovieCardComponent {
       });
     })
     return this.director;
+  }
+
+  // add favorite movie
+  addMoviesToFavorites(movieId: string): void {
+    this.fetchApiData.addFavoriteMovies(movieId).subscribe((response: any) => {
+      this.favorite = response;
+      console.log(this.favorite);
+      return this.favorite;
+    })
   }
 }
