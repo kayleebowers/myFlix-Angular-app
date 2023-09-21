@@ -6,6 +6,31 @@
     font-family: 'Victor Mono', monospace;
 }
 
+.profile-div {
+    background-color: #27383e;
+    padding: 1%;
+}
+
+.profile-title {
+    color: white;
+}
+
+button {
+    margin: 1% 1% 1% 0;
+    font-size: medium;
+    color: white !important;
+    background-color: #cb861a;
+}
+
+.delete-button {
+    background-color: #881515;
+    color: white;
+}
+
+button:hover {
+    border: 1px solid white;
+}
+
 .movie-card-div {
     display: flex;
     flex-wrap: wrap;
