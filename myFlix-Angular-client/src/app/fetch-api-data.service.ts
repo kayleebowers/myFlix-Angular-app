@@ -164,7 +164,8 @@ export class FetchApiDataService {
         {
           Authorization: "Bearer " + token,
         }
-      )
+      ),
+      responseType: "text",
     }).pipe(
       map(this.extractResponseData),
       catchError(this.handleError)
