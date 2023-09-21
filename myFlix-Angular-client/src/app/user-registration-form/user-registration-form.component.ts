@@ -29,11 +29,11 @@ export class UserRegistrationFormComponent implements OnInit {
     this.fetchApiData.userRegistration(this.userData).subscribe((response) => {
       // after successful request
       this.dialogRef.close();
-      this.snackBar.open(response, "OK", {
+      this.snackBar.open("Success! Please login.", "OK", {
         duration: 2000
       });
     }, (response) => {
-      this.snackBar.open(response, "OK", {
+      this.snackBar.open("Something went wrong with your registration. Try again later.", "OK", {
         duration: 2000
       })
     })
