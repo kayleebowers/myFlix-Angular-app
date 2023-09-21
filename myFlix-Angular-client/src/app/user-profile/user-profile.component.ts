@@ -21,18 +21,38 @@ export class UserProfileComponent {
     ) {}
 
   ngOnInit(): void {
-    this.getFavorites();
+    this.getUser();
   }
 
   //get user info (including favorites)
-  getFavorites(): void {
-    this.fetchApiData.getFavoriteMovies().subscribe((response: any) => {
-      this.favorites = response;
-      this.user = response;
+  getUser(): void {
+    this.fetchApiData.getUser().subscribe((favMovieIDs: any) => {
+      this.user = favMovieIDs;
+      this.fetchApiData.getAllMovies().subscribe((movies: any) => {
+        // filter movies by favorite ids
+        this.favorites = movies.filter((movie: any) => {
+          favMovieIDs.includes(movie);
+        } )
+      })
       console.log(this.favorites);
       return this.favorites;
     })
   }
+
+  // //get user favorites
+  // getFavoriteList(): void {
+  //   this.fetchApiData.getFavoriteMovies().subscribe((favMovieIDs: any) => {
+  //     this.user = favMovieIDs;
+  //     this.fetchApiData.getAllMovies().subscribe((movies: any) => {
+  //       // filter movies by favorite ids
+  //       this.favorites = movies.filter((movie: any) => {
+  //         favMovieIDs.includes(movie);
+  //       } )
+  //     })
+  //     console.log(this.favorites);
+  //     return this.favorites;
+  //   })
+  // }
 
   // open user update dialog on button click
   userUpdate(): void {
