@@ -20,24 +20,14 @@ export class UserProfileComponent {
 
   ngOnInit(): void {
     this.getFavorites();
-    // this.getUserInfo(this.id);
   }
 
-  // getUserInfo(id: string): void {
-  //   this.fetchApiData.getUser(id).subscribe((response: any) => {
-  //     this.user = response;
-  //     console.log(this.user);
-  //     return this.user;
-  //   })
-  // }
-
-  //get/add/remove movie from favorites
+  //get user info (including favorites)
   getFavorites(): void {
     this.fetchApiData.getFavoriteMovies().subscribe((response: any) => {
       this.favorites = response;
       this.user = response;
       console.log(this.favorites);
-      console.log(this.user);
       return this.favorites;
     })
   }
