@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <div>
-    <h1>Your profile</h1>
-    <mat-card>
-        <mat-card-header>
-            <mat-card-title>Your information</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>Username: {{user.Username}}</mat-card-content>
-        <mat-card-content>Email: {{user.Email}}</mat-card-content>
-        <mat-card-content>Birthday: {{user.Birthday}}</mat-card-content>
+  <h1>Your profile</h1>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Your information</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>Username: {{ user.Username }}</mat-card-content>
+    <mat-card-content>Email: {{ user.Email }}</mat-card-content>
+    <mat-card-content>Birthday: {{ user.Birthday }}</mat-card-content>
+  </mat-card>
+  <button (click)="userUpdate()">Update Your Information</button>
+  <button (click)="userDeletion()">Delete Your Account</button>
+  <h1>Your Favorite Movies</h1>
+  <div style="display: flex">
+    <mat-card *ngFor="let favorite of favorites; let i = index">
+      <mat-card-header>
+        <mat-card-title>{{ favorite.Title }}</mat-card-title>
+        <mat-card-subtitle
+          >Directed by {{ favorite.Director.Name }}</mat-card-subtitle
+        >
+      </mat-card-header>
+      <img src="{{ favorite.ImagePath }}" alt="{{ favorite.Title }}" />
     </mat-card>
-    <button (click)="userUpdate()">Update Your Information</button>
-    <button (click)="userDeletion()">Delete Your Account</button>
-    <h1>Your Favorite Movies</h1>
-    <div style="display: flex">
-        <mat-card>
-            <mat-card-header>
-                <mat-card-title>{{ favorites }}</mat-card-title>
-              </mat-card-header>
-        </mat-card>
-    </div>
+  </div>
 </div>

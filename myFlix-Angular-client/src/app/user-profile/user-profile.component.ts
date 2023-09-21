@@ -43,6 +43,7 @@ export class UserProfileComponent {
             return this.favorites.includes(movie._id);
           });
           this.favorites = movieIds
+          console.log(this.favorites);
           return this.favorites;
         });
       } else {
