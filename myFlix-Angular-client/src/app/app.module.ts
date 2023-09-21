@@ -28,6 +28,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { MovieFavoritesComponent } from './movie-favorites/movie-favorites.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { DeleteUserComponent } from './delete-user/delete-user.component';
 
 // define main routes
 const appRoutes: Routes = [
@@ -50,6 +51,7 @@ const appRoutes: Routes = [
     MovieDetailsComponent,
     MovieFavoritesComponent,
     UpdateUserComponent,
+    DeleteUserComponent,
   ],
   imports: [
     BrowserModule,

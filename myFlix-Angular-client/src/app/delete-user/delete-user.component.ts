@@ -4,27 +4,24 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-update-user',
-  templateUrl: './update-user.component.html',
-  styleUrls: ['./update-user.component.scss']
+  selector: 'app-delete-user',
+  templateUrl: './delete-user.component.html',
+  styleUrls: ['./delete-user.component.scss']
 })
-export class UpdateUserComponent implements OnInit {
-  @Input() userData = { Username: "", Password: "", Birthday: "", Email: ""};
+export class DeleteUserComponent {
   constructor(
     public fetchApiData: FetchApiDataService,
-    public dialogRef: MatDialogRef<UpdateUserComponent>,
+    public dialogRef: MatDialogRef<DeleteUserComponent>,
     public snackBar: MatSnackBar,
   ) {}
 
   ngOnInit(): void {
   }
 
-  editUser(): void {
-    this.fetchApiData.editUser(this.userData).subscribe((response) => {
-      console.log(response);
-      localStorage.setItem("user", JSON.stringify(response));
+  deleteUserProfile(): void {
+    this.fetchApiData.deleteUser().subscribe((response) => {
       this.dialogRef.close();
-      this.snackBar.open("Your profile was updated!", "OK", {
+      this.snackBar.open("Your profile was deleted.", "OK", {
         duration: 2000
       });
     }, (response) => {
