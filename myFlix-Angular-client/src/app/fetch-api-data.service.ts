@@ -165,6 +165,7 @@ export class FetchApiDataService {
           Authorization: "Bearer " + token,
         }
       ),
+      // HttpClient expects JSON response but endpoint sends back text message. Declare responseType to prevent error
       responseType: "text",
     }).pipe(
       map(this.extractResponseData),
