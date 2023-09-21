@@ -104,6 +104,7 @@ export class MovieCardComponent {
     this.fetchApiData.addFavoriteMovies(movieId).subscribe((response: any) => {
       this.favorites = response;
       console.log(this.favorites);
+      this.getFavoriteList();
       return this.favorites;
     })
   }
@@ -113,6 +114,7 @@ export class MovieCardComponent {
     this.fetchApiData.deleteFavoriteMovies(movieId).subscribe((response: any) => {
       this.favorites = response;
       console.log(this.favorites);
+      this.getFavoriteList();
       return this.favorites;
     })
   }
