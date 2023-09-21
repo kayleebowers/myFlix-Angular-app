@@ -36,17 +36,15 @@ export class UserProfileComponent {
   //get user favorites
   getFavoriteList(): void {
     this.fetchApiData.getFavoriteMovies().subscribe((favMovieIDs: any) => {
-      console.log(favMovieIDs);
-      if (favMovieIDs === false) {
+      if (favMovieIDs) {
         this.favorites = favMovieIDs;
         this.fetchApiData.getAllMovies().subscribe((movies: any) => {
-          // filter movies by favorite ids
-          this.favorites = movies.filter((movie: any) => {
-            favMovieIDs.includes(movie);
+          let movieIds = movies.filter((movie: any) => {
+            return this.favorites.includes(movie._id);
           });
+          this.favorites = movieIds
+          return this.favorites;
         });
-        console.log(this.favorites);
-        return this.favorites;
       } else {
           return (this.favorites = "No favorite movies yet");
         }

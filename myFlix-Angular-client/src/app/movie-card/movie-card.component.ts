@@ -104,6 +104,7 @@ export class MovieCardComponent {
     this.fetchApiData.addFavoriteMovies(movieId).subscribe((response: any) => {
       this.favorites = response;
       console.log(this.favorites);
+      // update list on change
       this.getFavoriteList();
       return this.favorites;
     })
