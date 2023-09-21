@@ -25,7 +25,6 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MovieGenreComponent } from './movie-genre/movie-genre.component';
 import { MovieDirectorComponent } from './movie-director/movie-director.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
-import { MovieFavoritesComponent } from './movie-favorites/movie-favorites.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
@@ -49,7 +48,6 @@ const appRoutes: Routes = [
     MovieGenreComponent,
     MovieDirectorComponent,
     MovieDetailsComponent,
-    MovieFavoritesComponent,
     UpdateUserComponent,
     DeleteUserComponent,
   ],
