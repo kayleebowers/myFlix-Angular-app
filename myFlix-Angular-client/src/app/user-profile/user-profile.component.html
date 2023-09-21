@@ -12,15 +12,15 @@
   <button (click)="userUpdate()">Update Your Information</button>
   <button (click)="userDeletion()">Delete Your Account</button>
   <h1>Your Favorite Movies</h1>
-  <div style="display: flex">
-    <mat-card *ngFor="let favorite of favorites; let i = index">
+  <div class="movie-card-div" >
+    <mat-card *ngFor="let favorite of favorites; let i = index" class="movie-card">
       <mat-card-header>
-        <mat-card-title>{{ favorite.Title }}</mat-card-title>
+        <mat-card-title class="movie-card-title">{{ favorite.Title }}</mat-card-title>
         <mat-card-subtitle
           >Directed by {{ favorite.Director.Name }}</mat-card-subtitle
         >
       </mat-card-header>
-      <img src="{{ favorite.ImagePath }}" alt="{{ favorite.Title }}" />
+      <img src="{{ favorite.ImagePath }}" alt="{{ favorite.Title }}" class="movie-card-image" />
     </mat-card>
   </div>
 </div>

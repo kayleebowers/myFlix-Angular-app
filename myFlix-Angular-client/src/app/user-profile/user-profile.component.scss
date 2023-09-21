@@ -1,3 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
 :not(mat-icon) {
     font-family: 'Victor Mono', monospace;
+}
+
+.movie-card-div {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #27383e;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.movie-card {
+    margin: 1%;
+    padding: 1%;
+    width: 30%;
+    min-height: 100%;
+}
+
+.movie-card-title {
+    font-size: xx-large;
+}
+
+.movie-card-image {
+    height: 60vh;
+    width: auto;
 }
