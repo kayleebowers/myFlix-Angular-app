@@ -21,7 +21,7 @@ export class UserLoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  updateUser(): void {
+  loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((result) => {
       console.log(result);
       localStorage.setItem("user", JSON.stringify(result.user));
