@@ -86,4 +86,13 @@ export class MovieCardComponent {
       return this.favorite;
     })
   }
+
+  // delete favorite movie
+  removeMoviesFromFavorites(movieId: string): void {
+    this.fetchApiData.deleteFavoriteMovies(movieId).subscribe((response: any) => {
+      this.favorite = response;
+      console.log(this.favorite);
+      return this.favorite;
+    })
+  }
 }
