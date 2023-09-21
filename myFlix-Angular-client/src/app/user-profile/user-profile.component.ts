@@ -9,8 +9,9 @@ import { MatDialog } from '@angular/material/dialog';
 })
 
 export class UserProfileComponent {
-  favorites: any[] = [];
+  favorites: any = "";
   id: string = "";
+  user: any = "";
 
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -19,13 +20,24 @@ export class UserProfileComponent {
 
   ngOnInit(): void {
     this.getFavorites();
+    // this.getUserInfo(this.id);
   }
 
-  // call API to get/add/remove movie from favorites
+  // getUserInfo(id: string): void {
+  //   this.fetchApiData.getUser(id).subscribe((response: any) => {
+  //     this.user = response;
+  //     console.log(this.user);
+  //     return this.user;
+  //   })
+  // }
+
+  //get/add/remove movie from favorites
   getFavorites(): void {
     this.fetchApiData.getFavoriteMovies().subscribe((response: any) => {
       this.favorites = response;
+      this.user = response;
       console.log(this.favorites);
+      console.log(this.user);
       return this.favorites;
     })
   }
