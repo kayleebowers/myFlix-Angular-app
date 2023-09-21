@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatDialog } from '@angular/material/dialog';
+import { UpdateUserComponent } from '../update-user/update-user.component';
 
 @Component({
   selector: 'app-user-profile',
@@ -30,6 +31,13 @@ export class UserProfileComponent {
       console.log(this.favorites);
       return this.favorites;
     })
+  }
+
+  // open user update dialog on button click
+  userUpdate(): void {
+    this.dialog.open(UpdateUserComponent, {
+      width: "500px"
+    });
   }
 
 }
