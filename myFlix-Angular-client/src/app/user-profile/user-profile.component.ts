@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateUserComponent } from '../update-user/update-user.component';
+import { DeleteUserComponent } from '../delete-user/delete-user.component';
 
 @Component({
   selector: 'app-user-profile',
@@ -38,6 +39,13 @@ export class UserProfileComponent {
     this.dialog.open(UpdateUserComponent, {
       width: "500px"
     });
+  }
+
+  // open user delete dialog on button click
+  userDeletion(): void {
+    this.dialog.open(DeleteUserComponent, {
+      width: "280px"
+    })
   }
 
 }
