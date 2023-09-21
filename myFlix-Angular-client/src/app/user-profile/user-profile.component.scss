@@ -54,3 +54,21 @@ button:hover {
     height: 60vh;
     width: auto;
 }
+
+@media (max-width: 1200px) {
+    .movie-card-div {
+        justify-content: center;
+    }
+
+    .movie-card {
+        width: 45%;
+        min-height: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .movie-card {
+        width: 95%;
+        margin: 5%;
+    }
+}
