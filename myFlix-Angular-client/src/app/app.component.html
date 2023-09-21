@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<div *ngIf="isUser() === true">
+    <mat-toolbar>
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="home button"
+        (click)="routeToHome()"
+      >
+        <mat-icon>house</mat-icon>
+      </button>
+      <span (click)="routeToHome()" style="font-size: large;">myFlix</span>
+      <span style="width: 83%;"></span>
+      <span (click)="routeToProfile()" style="font-size: large;">Profile</span>
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with share icon"
+        (click)="logout()"
+      >
+        <mat-icon>logout</mat-icon>
+      </button>
+    </mat-toolbar>
+  </div>
+<router-outlet></router-outlet>
