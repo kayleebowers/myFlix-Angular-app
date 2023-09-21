@@ -17,12 +17,13 @@ export class UpdateUserComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log(this.userData);
   }
 
   editUser(): void {
     this.fetchApiData.editUser(this.userData).subscribe((response) => {
       console.log(response);
-      localStorage.setItem("user", JSON.stringify(response.user));
+      localStorage.setItem("user", JSON.stringify(response));
       this.dialogRef.close();
       this.snackBar.open("Your profile was updated!", "OK", {
         duration: 2000
