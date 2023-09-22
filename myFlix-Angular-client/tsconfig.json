@@ -25,7 +25,7 @@
     ]
   },
   "typedocOptions": {
-    "entryPoints": ["./src/app/app.component.ts"],
+    "entryPoints": ["./src/app/movie-card/movie-card.component.ts", "./src/app/app.component.ts", "./src/app/welcome-page/welcome-page.component.ts", "./src/app/user-profile/user-profile.component.ts"],
     "out": "docs"
 },
   "angularCompilerOptions": {
