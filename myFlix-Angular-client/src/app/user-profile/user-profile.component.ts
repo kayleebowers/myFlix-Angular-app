@@ -19,6 +19,7 @@ export class UserProfileComponent {
     public dialog: MatDialog
   ) {}
 
+  /** make api call on component mount */
   ngOnInit(): void {
     this.getUser();
     this.getFavoriteList();
@@ -28,7 +29,6 @@ export class UserProfileComponent {
   getUser(): void {
     this.fetchApiData.getUser().subscribe((response: any) => {
       this.user = response;
-      console.log(this.user);
       return this.user;
     });
   }
@@ -38,12 +38,12 @@ export class UserProfileComponent {
     this.fetchApiData.getFavoriteMovies().subscribe((favMovieIDs: any) => {
       if (favMovieIDs) {
         this.favorites = favMovieIDs;
+        /** get movie objects from favMovieIDs */
         this.fetchApiData.getAllMovies().subscribe((movies: any) => {
           let movieIds = movies.filter((movie: any) => {
             return this.favorites.includes(movie._id);
           });
           this.favorites = movieIds
-          console.log(this.favorites);
           return this.favorites;
         });
       } else {
@@ -52,14 +52,14 @@ export class UserProfileComponent {
     });
   }
 
-  // open user update dialog on button click
+  /** open user update dialog on button click */
   userUpdate(): void {
     this.dialog.open(UpdateUserComponent, {
       width: '500px',
     });
   }
 
-  // open user delete dialog on button click
+  /** open user delete dialog on button click */
   userDeletion(): void {
     this.dialog.open(DeleteUserComponent, {
       width: '280px',

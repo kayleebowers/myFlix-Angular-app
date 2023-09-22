@@ -8,6 +8,7 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 })
 export class MovieGenreComponent {
   constructor(
+    /** get data from movie-card api call to pass to html */
     @Inject(MAT_DIALOG_DATA)
     public data: {
       Name: string,

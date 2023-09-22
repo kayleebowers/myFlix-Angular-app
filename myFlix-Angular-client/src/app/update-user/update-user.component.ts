@@ -21,7 +21,6 @@ export class UpdateUserComponent implements OnInit {
 
   editUser(): void {
     this.fetchApiData.editUser(this.userData).subscribe((response) => {
-      console.log(response.status);
       localStorage.setItem("user", JSON.stringify(response));
       this.dialogRef.close();
       this.snackBar.open("Your profile was updated!", "OK", {

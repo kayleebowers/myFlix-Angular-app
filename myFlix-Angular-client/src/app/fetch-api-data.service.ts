@@ -10,8 +10,12 @@ const apiUrl = 'https://movies-app1-3d6bd65a6f09.herokuapp.com';
   providedIn: 'root'
 })
 export class FetchApiDataService {
-  // provide HttpClient to  entire class, making it available via this.http
-  // shortcut for constructor(http: HttpClient) { this.http = http; }
+  /** provide HttpClient to  entire class, making it available via this.http
+   * shortcut for constructor
+   * (http: HttpClient) { 
+   *   this.http = http; 
+   * }
+   */
   constructor(private http: HttpClient) {}
 
   // make api call for user registration

@@ -13,6 +13,7 @@ export class AppComponent {
     private router: Router
   ) {}
 
+  /** Define home route used in navbar */
   routeToHome(): void {
     if (localStorage.getItem("user")) {
       this.router.navigate(["movies"]);
@@ -20,7 +21,8 @@ export class AppComponent {
       this.router.navigate(["welcome"]);
     }  
   }
-
+  
+  /** Define profile route used in navbar */
   routeToProfile(): void {
     if (localStorage.getItem("user")) {
       this.router.navigate(["users"]);
@@ -29,12 +31,13 @@ export class AppComponent {
     }  
   }
 
+  /** Define logout function used in navbar */
   logout(): void {
     localStorage.clear();
     this.router.navigate(["welcome"]);
   }
 
-  // check for user
+  /** Check for user to render navbar or not */
   isUser(): any {
     if (localStorage.getItem("user")) {
       return true;

@@ -12,6 +12,7 @@ import { FetchApiDataService } from '../fetch-api-data.service';
   styleUrls: ['./user-registration-form.component.scss']
 })
 export class UserRegistrationFormComponent implements OnInit {
+  /** get input from registration html */
   @Input() userData = { Username: "", Password: "", Email: "", Birthday: ""};
 
   constructor(

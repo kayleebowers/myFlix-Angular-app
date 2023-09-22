@@ -22,7 +22,8 @@ export class MovieCardComponent {
     public dialog: MatDialog,
     ) {}
 
-  ngOnInit(): void {
+    /** make API function calls on component mount */
+    ngOnInit(): void {
     this.getMovies();
     this.getFavoriteList();
   }
@@ -91,6 +92,7 @@ export class MovieCardComponent {
     });
   }
 
+  /** check for favorites to render correct heart icon in html */
   isFavorite(id: string): boolean {
     if (this.favorites.includes(id)) {
       return true;

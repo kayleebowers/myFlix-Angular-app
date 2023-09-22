@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-login.component.scss']
 })
 export class UserLoginComponent implements OnInit {
+  /** get input from login html */
   @Input() userData = { Username: "", Password: ""};
   constructor(
     public fetchApiData: FetchApiDataService,
