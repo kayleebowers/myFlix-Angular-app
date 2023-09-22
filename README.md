@@ -20,6 +20,18 @@ Download the project locally and install the dependencies by running `npm instal
 
 The app is hosted on GitHub pages and can be viewed [there](https://kayleebowers.github.io/myFlix-Angular-deployed). 
 
+## Updating The Documentation
+In-depth documentation for this project can be viewed in the `index.html` file in the `docs` folder of `myFlix-Angular-client`. To add documentation to more components, they must first be added to the `tsconfig.json` file:
+
+```json
+"typedocOptions": {
+    "entryPoints": ["./src/app/movie-card/movie-card.component.ts", "./src/app/app.component.ts", "./src/app/welcome-page/welcome-page.component.ts", "./src/app/user-profile/user-profile.component.ts"],
+    "out": "docs"
+}
+```
+
+Update the `index.html` file by running `npx typedoc --out docs` and adding all the routes at the end. For example, `npx typedoc --out docs ./src/app/movie-card/movie-card.component.ts ./src/app/app.component.ts`.
+
 ## Technologies
 * Angular
 * TypeScript
